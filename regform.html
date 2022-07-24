@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="myform" method="post" onsubmit="return myforms()" align="center"><br><br>
+        UserName: <input type="text" id="Usrname" required> <br><br>
+        Email: <input type="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" required><br><br>
+        Mobile No.: <input type="number" id="number" minlength="10" maxlength="10" required><br><br>
+        Name: <input type="text" id="name"><br><br>
+        Password: <input type="password" id="password" required><br><br>
+        Confirm Password: <input type="password" id="cpassword" required> <br><br>
+        <input type="submit">
+
+    </form>
+    <script>
+        function UserNameValidation() {
+            var UserName = document.myform.Usrname.value;
+            if(UserName==""&& UserName.length<25)
+                {
+                    alert("please fill valid username");
+                    return false;
+                }
+        }
+        function NumberValidation() {
+            var Contact = document.myform.number.value;
+              if(Contact.length<10 || Contact.length>10)
+                {
+                    alert("wrong number!!");
+                    return false;
+                }
+            
+        }
+
+        // function EmailValidation() {
+        //     var x = document.myform.email.value;
+        //     var atposition = x.indexOf("@");
+        //     var dotposition = x.lastIndexOf(".");
+        //     if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+        //         alert("Please enter a valid e-mail address \n atpostion:" + atposition + "\n dotposition:" + dotposition);
+        //         return false;
+        //     }
+
+        // }
+       
+        function NameValidation() {
+            var Name=document.myform.name.value;
+            var NameValidation=/^[a-zA-Z]*$/;
+             if(!NameValidation.test(Name))
+                {
+                    alert("please fill valid name");
+                    return false;   
+        }
+    }
+
+        function matchpassValidation() {
+            var password = document.myform.password.value;
+            var cpassword = document.myform.cpassword.value;
+
+            if (password == cpassword) {
+                alert("login successful")
+            }
+            else {
+                alert("password must be same!");
+                return false;
+            }
+        }
+
+        function myforms() {
+           
+            UserNameValidation();
+            // EmailValidation();
+            NumberValidation();
+            NameValidation();
+            matchpassValidation();
+
+        }
+
+    </script>
+</body>
+
+</html>
