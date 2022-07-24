@@ -1,0 +1,19 @@
+{% extends 'home/app.html' %}
+
+{% block title %}
+    Form
+{% endblock %}
+
+{% block content %}
+<form method='POST' action="{% url 'details' %}">
+    {% csrf_token %}
+    <h1 align = "center"><u>ENTER YOUR DETAILS</u></h1><hr>
+    <h3 align = "left"> Name : <input type="text" name="name" style = "width:300px"> </h3><hr>
+    
+    <h3 align = "left"> Email : <input type="email" name="email" style = "width:300px"></h3><hr>
+     
+    <h3 align = "left"> Contact : <input type="tel" name="contact" style = "width:300px"></h3><hr>
+    
+    <h1 align = "center"> <input type="submit" value="submit" style="height:50px; width:100px"></h3>
+</form>
+{% endblock %}

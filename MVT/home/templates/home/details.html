@@ -1,0 +1,24 @@
+{% extends 'home/app.html' %}
+
+{% block title %}
+    detail Page
+{% endblock %}
+
+{% block content %}
+<h1> Database </h1>
+<table border="1px">
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Contact Number</td>
+    </tr>
+{% for item in f.all %}
+    <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.contact}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}
